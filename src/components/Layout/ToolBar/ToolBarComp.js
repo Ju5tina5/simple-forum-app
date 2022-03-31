@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {RiLogoutBoxLine} from 'react-icons/ri';
 import {useSelector, useDispatch} from "react-redux";
 import {resetUser} from "../../../features/userSlice";
@@ -10,10 +10,12 @@ const ToolBarComp = () => {
 
     const userLoggedIn = useSelector(state => state.user.value)
     const dispatch = useDispatch();
+    const nav = useNavigate();
 
     const handleUserLogOut = () => {
         http.get('logout').then( res => {
             if(res.success){
+                nav('/')
                 dispatch(resetUser())
             }
         })

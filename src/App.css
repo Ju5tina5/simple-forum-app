@@ -29,3 +29,9 @@ h2 > a:hover{
     color: var(--text-color);
     text-decoration: underline var(--text-color);
 }
+
+@media (max-width: 550px) {
+    .App{
+        width: 90%;
+    }
+}

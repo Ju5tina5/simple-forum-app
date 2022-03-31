@@ -3,7 +3,7 @@
 }
 
 .inputWrapper{
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: var(--secondary-bg-color);
 }
 
@@ -13,8 +13,21 @@
     color: var(--text-color);
 }
 
+.inputWrapper > input{
+    font-weight: 600;
+}
+
 span{
     padding: 5px;
     color: red;
     font-weight: 800;
+}
+
+
+.danger:focus-visible{
+   outline:solid 2px red;
+}
+
+.clear:focus-visible{
+    outline:solid 2px #0bb40b;
 }
