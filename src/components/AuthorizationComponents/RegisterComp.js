@@ -21,7 +21,6 @@ const RegisterComp = () => {
 
     const handleRegisterFormSubmit = (e) => {
         e.preventDefault();
-        console.log(refs.user_name.current.value)
         const obj = {
             user_name: refs.user_name.current.value,
             email: refs.email.current.value,
@@ -41,10 +40,11 @@ const RegisterComp = () => {
             return setError('Passwords should match')
         }
         http.post(obj, 'register').then( res => {
-            console.log(res)
             if(res.success){
                 dispatch(setUser(res.user))
-                nav('/profile/:user_name')
+                nav(`/profile/${res.user.user_name}`)
+            }else{
+                setError(res.message)
             }
         })
     }

@@ -1,0 +1,17 @@
+.profileWrapper{
+    background-color: var(--main-bg-color);
+}
+
+.profileWrapper > img {
+    height: 250px;
+    width: 250px;
+}
+
+.iconWrapper{
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.iconWrapper > * {
+    cursor: pointer;
+}

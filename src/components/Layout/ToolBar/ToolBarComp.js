@@ -25,7 +25,7 @@ const ToolBarComp = () => {
         return (
             <div className={'toolBar'}>
                 <Link to={'/'}>Discussions</Link>
-                <Link to={'/profile/:user_name'}>{userLoggedIn.user_name} Profile</Link>
+                <Link to={`/profile/${userLoggedIn.user_name}`}>{userLoggedIn.user_name} Profile</Link>
                 <div className={`logoutDiv`} onClick={handleUserLogOut}><RiLogoutBoxLine />Logout</div>
             </div>
         );
