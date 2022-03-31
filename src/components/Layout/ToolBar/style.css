@@ -1,0 +1,36 @@
+.toolBar{
+    border-top: solid 1px var(--decoration-color);
+    border-bottom: solid 1px var(--decoration-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.toolBar > * {
+    text-align: center;
+    width: 300px;
+    font-size: 1.5rem;
+    padding: 5px 0;
+}
+
+.logoutDiv{
+    color: var(--text-color);
+    cursor: pointer;
+    user-select: none;
+    transition: 0.5s;
+    font-weight: 600;
+}
+
+.logoutDiv:hover, .toolBar a:hover{
+    background-color: var(--decoration-color);
+    color: var(--main-bg-color);
+}
+
+@media (max-width: 550px) {
+    .toolBar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

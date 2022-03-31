@@ -1,0 +1,28 @@
+.cautionBackground{
+    width: 60%;
+    height: 500px;
+    background-image: url("../../assets/kisspng-warning-sign-clip-art-safety-scalable-vector-graph-blank-caution-sign-clipart-5b6f8fd6b2a3e7.8883794015340379747317.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.cautionText{
+    position: absolute;
+    bottom: 150px;
+    font-weight: 800;
+}
+
+@media (max-width: 1300px) {
+    .cautionBackground{
+        width: 100%;
+    }
+}
+
+@media (max-width: 930px) {
+    .cautionBackground{
+        width: 100%;
+        height: 400px;
+    }
+}

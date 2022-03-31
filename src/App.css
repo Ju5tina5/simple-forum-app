@@ -1,0 +1,31 @@
+.App{
+    margin: 2rem 0;
+    padding: 0 1rem;
+    width: 70%;
+    background-color: var(--secondary-bg-color);
+}
+
+h2{
+    font-size: 2em;
+    color: var(--text-color);
+}
+
+h2, h3, h4, h5, a{
+    color: var(--text-color);
+}
+
+p{
+    color: var(--decoration-color);
+}
+
+a{
+    color: var(--text-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+h2 > a:hover{
+    color: var(--text-color);
+    text-decoration: underline var(--text-color);
+}
