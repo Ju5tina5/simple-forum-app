@@ -1,9 +1,11 @@
 import React from 'react';
+import RegisterComp from "../components/AuthorizationComponents/RegisterComp";
 
 const RegisterPage = () => {
     return (
         <div>
-            <h2>Register Page</h2>
+            <h3>Register</h3>
+            <RegisterComp />
         </div>
     );
 };

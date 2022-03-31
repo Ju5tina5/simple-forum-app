@@ -1,0 +1,20 @@
+.wrapperDiv{
+    background-color: var(--main-bg-color);
+}
+
+.inputWrapper{
+    padding: 20px 0;
+    background-color: var(--secondary-bg-color);
+}
+
+.inputWrapper > label{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+span{
+    padding: 5px;
+    color: red;
+    font-weight: 800;
+}
