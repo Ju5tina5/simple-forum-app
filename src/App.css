@@ -30,6 +30,18 @@ h2 > a:hover{
     text-decoration: underline var(--text-color);
 }
 
+.main-bg{
+    background-color: var(--main-bg-color);
+}
+
+.button{
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--decoration-color);
+    color: var(--main-bg-color)
+}
+
 @media (max-width: 550px) {
     .App{
         width: 90%;

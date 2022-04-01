@@ -10,6 +10,7 @@ import UserProfilePage from "./pages/UserProfilePage";
 import TitleComp from "./components/Layout/TitleComp";
 import ToolBarComp from "./components/Layout/ToolBar/ToolBarComp";
 import FooterComp from "./components/Layout/Footer/FooterComp";
+import NewDiscussionPage from "./pages/NewDiscussionPage";
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
                         <Route path='/login' element={<LoginPage/>}/>
                         <Route path='/register' element={<RegisterPage/>}/>
                         <Route path='/' element={<IndexPage/>}/>
-                        <Route path='/profile/:user_name' element={<UserProfilePage/>}/>
+                        <Route path='/profile' element={<UserProfilePage/>}/>
+                        <Route path='/newDiscussion' element={<NewDiscussionPage />}/>
                         <Route path='*' element={<ErrorPage/>}/>
                     </Routes>
                     <FooterComp />

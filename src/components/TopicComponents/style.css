@@ -1,0 +1,24 @@
+.topicWrapper{
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+}
+
+.topicWrapper > * {
+    margin: 0;
+    padding: 0;
+}
+
+.topicWrapper > h4 {
+    flex: 1;
+
+}
+
+.topicWrapper > p {
+    flex: 3;
+}
+
+.topicWrapper svg {
+    cursor: pointer;
+    flex: 1;
+    font-size: 25px;
+}

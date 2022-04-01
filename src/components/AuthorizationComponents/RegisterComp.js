@@ -2,7 +2,7 @@ import React, {useRef, useState, useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {setUser} from "../../features/userSlice";
-import './style..css';
+import './style.css';
 import InputComp from "./InputComp";
 import http from "../../plugins/http";
 
@@ -42,7 +42,7 @@ const RegisterComp = () => {
         http.post(obj, 'register').then( res => {
             if(res.success){
                 dispatch(setUser(res.user))
-                nav(`/profile/${res.user.user_name}`)
+                nav(`/profile`)
             }else{
                 setError(res.message)
             }
@@ -79,7 +79,7 @@ const RegisterComp = () => {
                     <p>Fields marked with <span>*</span> are required</p>
                     {error && <span>{error}</span>}
                 </div>
-                <button type='submit'>Register</button>
+                <button className={'button'} type='submit'>Register</button>
             </form>
         </div>
 

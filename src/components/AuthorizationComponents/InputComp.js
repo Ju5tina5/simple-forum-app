@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './style.css';
 
 const InputComp = React.forwardRef(({type, text}, ref) => {
 
@@ -7,6 +8,13 @@ const InputComp = React.forwardRef(({type, text}, ref) => {
     const validateInput = (event) => {
         if (type === 'text') {
             if (event.target.value.length < 5 || event.target.value.length > 15) {
+                setAllowed(false)
+            } else {
+                setAllowed(true)
+            }
+        }
+        if(text === 'Title' && type === 'text'){
+            if (event.target.value.length < 5 || event.target.value.length > 100) {
                 setAllowed(false)
             } else {
                 setAllowed(true)
@@ -30,7 +38,7 @@ const InputComp = React.forwardRef(({type, text}, ref) => {
 
     return (
         <>
-            <label htmlFor="UserName">{text} <span>*</span></label>
+            <label htmlFor={text}>{text} <span>*</span></label>
             <input onChange={(e) => validateInput(e)} className={allowed ? 'clear' : 'danger'} ref={ref} type={type}
                    placeholder={text}/>
         </>

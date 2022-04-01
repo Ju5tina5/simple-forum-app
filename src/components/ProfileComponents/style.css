@@ -7,11 +7,31 @@
     width: 250px;
 }
 
-.iconWrapper{
+.iconsWrapper{
     font-size: 2rem;
     color: var(--text-color);
 }
 
-.iconWrapper > * {
+.iconsWrapper  > div {
     cursor: pointer;
 }
+
+.iconsWrapper > div:hover{
+    background-color: var(--decoration-color);
+    color: var(--main-bg-color);
+}
+
+.iconsWrapper > div:hover > h4 {
+    color: var(--main-bg-color);
+}
+
+.iconsWrapper > div > h4{
+    padding-right: 5px;
+}
+
+
+.active{
+    filter: sepia(100%);
+}
+
+

@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import http from "../../plugins/http";
 import {setUser} from "../../features/userSlice";
+import './style.css';
 
 const LoginComp = () => {
 
@@ -33,7 +34,7 @@ const LoginComp = () => {
         http.post(obj, 'login').then( res => {
             if(res.success){
                 dispatch(setUser(res.user))
-                nav(`/profile/${res.user.user_name}`)
+                nav(`/profile`)
             }else{
                 setError(res.message)
             }
@@ -63,7 +64,7 @@ const LoginComp = () => {
                     <p>Fields marked with <span>*</span> are required</p>
                     {error && <span>{error}</span>}
                 </div>
-                <button type='submit'>Login</button>
+                <button className={'button'} type='submit'>Login</button>
             </form>
         </div>
     );

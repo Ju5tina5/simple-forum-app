@@ -1,0 +1,13 @@
+.createBtn{
+    color: var(--text-color);
+    background-color: #545252;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.5s;
+    font-weight: 600;
+}
+
+.createBtn:hover{
+    background-color: var(--decoration-color);
+    color: var(--main-bg-color);
+}
