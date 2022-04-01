@@ -22,3 +22,19 @@
     flex: 1;
     font-size: 25px;
 }
+
+.singleDiscussionWrapper{
+    margin-top: 5px;
+    width: 90%;
+    color: var(--decoration-color);
+    background-color: var(--secondary-bg-color);
+}
+
+.singleDiscussionWrapper > strong{
+    flex: 1;
+}
+
+.singleDiscussionWrapper > p {
+    flex: 1;
+    margin: 0;
+}

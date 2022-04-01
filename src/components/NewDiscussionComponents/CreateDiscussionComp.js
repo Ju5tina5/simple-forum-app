@@ -1,15 +1,18 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import InputComp from "../AuthorizationComponents/InputComp";
 import discussions from '../../assets/discussions.json';
 import TextAreaComp from "../AuthorizationComponents/TextAreaComp";
+import http from "../../plugins/http";
+import {useNavigate} from "react-router-dom";
 
 const CreateDiscussionComp = () => {
 
     const [error, setError] = useState(null);
+    const nav = useNavigate();
 
     const refs = {
         topic: useRef(),
-        title: useRef(),
+        subject: useRef(),
         description: useRef(),
     }
 
@@ -19,12 +22,44 @@ const CreateDiscussionComp = () => {
 
         const discussionObj = {
             topic_name: refs.topic.current.value,
-            title: refs.title.current.value,
+            title: refs.subject.current.value,
             description: refs.description.current.value,
         }
 
-        console.log(discussionObj)
+        const format = /[!@#$%^&*()+\-=\[\]{};':"\\|<>\/?]+/;
+
+
+        if (format.test(discussionObj.title)) {
+            return setError("'Subject can't contain special symbols");
+        }
+
+        if( discussionObj.title.length < 5 || discussionObj.title.length > 100){
+            return setError('Subject should be from 5 to 100 symbols long')
+        }
+        if (discussionObj.description.length < 50 || discussionObj.description.length > 500) {
+            return setError('Description should be from 50 to 500 symbols long')
+        }
+
+        http.post(discussionObj, 'uploadNewDiscussion').then( res => {
+            if(res.success){
+                nav('/profile')
+            }
+            if(!res.success){
+                setError(res.message)
+            }
+            if(res.message === 'Not logged in'){
+                nav('/login')
+            }
+        })
     }
+
+    useEffect(() => {
+        setTimeout( () => {
+            if(error){
+                setError(null)
+            }
+        }, 1500)
+    }, [error])
 
     return (
         <div className='wrapperDiv'>
@@ -38,7 +73,7 @@ const CreateDiscussionComp = () => {
                 </div>
                 <div className={'d-flex flex-column inputWrapper'}>
                     <p>Discussion title should be from 5 to 100 symbols long</p>
-                    <InputComp type='text' ref={refs.title} text='Title'/>
+                    <InputComp type='text' ref={refs.subject} text='Subject'/>
                 </div>
                 <div className={'d-flex flex-column inputWrapper'}>
                     <p>Discussion description should be from 50 to 500 symbols long</p>

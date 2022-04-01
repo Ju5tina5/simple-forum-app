@@ -13,7 +13,7 @@ const InputComp = React.forwardRef(({type, text}, ref) => {
                 setAllowed(true)
             }
         }
-        if(text === 'Title' && type === 'text'){
+        if(text === 'Subject' && type === 'text'){
             if (event.target.value.length < 5 || event.target.value.length > 100) {
                 setAllowed(false)
             } else {

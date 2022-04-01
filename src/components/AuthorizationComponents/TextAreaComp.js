@@ -19,6 +19,7 @@ const TextAreaComp = React.forwardRef(({text}, ref) => {
             <textarea onChange={(e) => validateTextArea(e)} style={{whiteSpace: 'pre-wrap'}}
                  className={allowed ? 'clear' : 'danger'}
                  id={text}
+                      rows={5}
                  ref={ref}
                  placeholder={text} />
         </>

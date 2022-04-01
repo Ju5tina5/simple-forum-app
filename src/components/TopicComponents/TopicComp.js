@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './style.css';
 import {BiPlus, BiMinus} from 'react-icons/bi'
 import MiniDiscussionsDisplay from "./MiniDisscusionDisplay";
@@ -6,6 +6,12 @@ import MiniDiscussionsDisplay from "./MiniDisscusionDisplay";
 const TopicComp = ({item}) => {
 
     const [loaded, setLoaded] = useState(false);
+
+    useEffect( () => {
+        if(item.name === 'Technical'){
+            setLoaded(true)
+        }
+    }, [])
 
     return (
         <>

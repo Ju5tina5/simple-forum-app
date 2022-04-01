@@ -23,6 +23,10 @@ span{
     font-weight: 800;
 }
 
+textarea{
+    font-weight: 600;
+}
+
 
 .danger:focus-visible{
    outline:solid 2px red;

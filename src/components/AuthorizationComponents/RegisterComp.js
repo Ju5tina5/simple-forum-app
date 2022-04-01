@@ -39,10 +39,9 @@ const RegisterComp = () => {
         if (obj.password  !== obj.passwordTwo ) {
             return setError('Passwords should match')
         }
-        http.post(obj, 'register').then( res => {
+        http.post(obj, 'register').then( async (res) => {
             if(res.success){
-                dispatch(setUser(res.user))
-                nav(`/profile`)
+                nav(`/login`)
             }else{
                 setError(res.message)
             }

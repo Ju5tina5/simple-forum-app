@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../assets/discussions.json';
 import TopicComp from "../components/TopicComponents/TopicComp";
 import {useSelector} from "react-redux";
-import CreateTopicButton from "../components/NewTopicComponents/CreateTopicButton";
+import CreateTopicButton from "../components/NewDiscussionComponents/CreateTopicButton";
 
 const IndexPage = () => {
 

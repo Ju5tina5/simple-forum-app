@@ -8,7 +8,7 @@ const CreateTopicButton = () => {
 
     return (
         <div onClick={() => nav('/newDiscussion')} className='createBtn p-2'>
-            Create Topic
+            Create Discussion
         </div>
     );
 };

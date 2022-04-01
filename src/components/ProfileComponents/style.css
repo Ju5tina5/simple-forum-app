@@ -29,9 +29,13 @@
     padding-right: 5px;
 }
 
-
 .active{
     filter: sepia(100%);
+}
+
+.smallItem{
+    width: 90%;
+    background-color: var(--secondary-bg-color);
 }
 
 

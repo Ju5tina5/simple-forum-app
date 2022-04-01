@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 import './style.css';
-import SelectedItemsDisplay from "./SelectedItemsDisplay";
+import UserDiscussions from "./UserDiscussions";
 
 const DisplayUserItems = () => {
 
@@ -9,7 +9,7 @@ const DisplayUserItems = () => {
     const [currentlyActive, setCurrentlyActive] = useState(0);
 
     return (
-        <div className={'d-flex profileWrapper mt-2'}>
+        <div className={'d-flex flex-column profileWrapper mt-2'}>
             <div className='d-flex text-center w-100'>
                 <div
                     onClick={() => setCurrentlyActive(0)}
@@ -22,7 +22,12 @@ const DisplayUserItems = () => {
                     className={`${currentlyActive === 1 ? 'active' : ''} button flex-grow-1`}>
                     Posts <span>{userCountData.postsCount}</span>
                 </div>
-                <SelectedItemsDisplay currentlyActive={currentlyActive}/>
+            </div>
+            <div>
+                {currentlyActive === 0 && userCountData.topicsCount > 0 && <UserDiscussions type={'discussions'}/>}
+                {currentlyActive === 0 && userCountData.topicsCount === 0 && <h4 className='p-5'>No topics yet</h4>}
+                {currentlyActive === 1 && userCountData.postsCount > 0 && <UserDiscussions type={'posts'}/>}
+                {currentlyActive === 1 && userCountData.postsCount === 0 && <h4 className='p-5'>No posts yet</h4>}
             </div>
         </div>
     );

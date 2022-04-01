@@ -16,9 +16,6 @@ const ProfileComp = () => {
 
 
     useEffect( () => {
-        if(!user){
-            nav('/login')
-        }
         http.get('getUserData').then( res => {
             if(res.success){
                 dispatch(setCounts(res.countData))
@@ -27,6 +24,9 @@ const ProfileComp = () => {
                 nav('/login')
             }
         })
+        if(!user){
+            nav('/login')
+        }
     }, [])
 
 

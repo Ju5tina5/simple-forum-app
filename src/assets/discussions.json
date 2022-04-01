@@ -1,23 +1,27 @@
 [
   {
-    "name": "Page",
-    "description": "Topics on page bugs/ suggestion or improvement"
+    "name": "Technical",
+    "description": "Topics about page bugs/ suggestion on improvements"
   },
   {
     "name": "Politics",
-    "description": "Topics about politics"
+    "description": "Everything about politics"
   },
   {
     "name" : "LiveStyle",
-    "description": "Topics about live style"
+    "description": "Topics about interesting file-style aspects"
   },
   {
     "name": "Hobbies",
-    "description": "Topics about cool hobbies/profession"
+    "description": "Topics about cool hobbies/professions"
   },
   {
     "name": "Cinema",
-    "description": "Topics about new/ old/ favorite/ movies"
+    "description": "Topics about new/ old/ favorite movies"
+  },
+  {
+    "name": "Computers",
+    "description": "Topics all about computer stuff (gaming, coding, building etc.)"
   },
   {
     "name": "Other",
