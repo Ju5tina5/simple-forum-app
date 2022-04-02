@@ -38,4 +38,30 @@
     background-color: var(--secondary-bg-color);
 }
 
+.bookmark{
+    cursor: pointer;
+    padding: 5px;
+    top: 0;
+    font-size: 20px;
+    right: 0;
+    color: var(--text-color);
+}
+
+.modalContent{
+    position: relative;
+    color: var(--decoration-color);
+    width: 60%;
+    background-color: var(--secondary-bg-color);
+}
+
+.discussionManipulationButtons > div > * {
+    cursor: pointer;
+    padding: 2px;
+}
+
+.discussionManipulationButtons > div > *:hover{
+    background-color: var(--decoration-color);
+    color: var(--main-bg-color);
+}
+
 

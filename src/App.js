@@ -11,8 +11,11 @@ import TitleComp from "./components/Layout/TitleComp";
 import ToolBarComp from "./components/Layout/ToolBar/ToolBarComp";
 import FooterComp from "./components/Layout/Footer/FooterComp";
 import NewDiscussionPage from "./pages/NewDiscussionPage";
+import UpdateDiscussionPage from "./pages/UpdateDiscussionPage";
 
 function App() {
+
+    if (!localStorage.getItem('favorites')) localStorage.setItem('favorites', JSON.stringify([]));
 
     return (
         <Provider store={store}>
@@ -26,6 +29,7 @@ function App() {
                         <Route path='/' element={<IndexPage/>}/>
                         <Route path='/profile' element={<UserProfilePage/>}/>
                         <Route path='/newDiscussion' element={<NewDiscussionPage />}/>
+                        <Route path='/updateDiscussion/:token' element={<UpdateDiscussionPage />}/>
                         <Route path='*' element={<ErrorPage/>}/>
                     </Routes>
                     <FooterComp />

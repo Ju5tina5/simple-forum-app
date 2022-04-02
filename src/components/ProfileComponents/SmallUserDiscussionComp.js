@@ -1,17 +1,72 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {FaBookmark, FaRegBookmark} from 'react-icons/fa';
+import {RiEdit2Fill, RiDeleteBack2Fill} from 'react-icons/ri'
+import {useDispatch} from "react-redux";
+import {setItem} from "../../features/updatingItemSlice";
+import {resetUser, setFavoritesCount, decreaseTopicCount} from "../../features/userSlice";
+import './style.css'
+import http from "../../plugins/http";
+import {useNavigate} from "react-router-dom";
 
-const SmallUserDiscussionComp = ({item}) => {
+const SmallUserDiscussionComp = ({item, setUserItems, useritems}) => {
+
+    const [favorite, setFavorite] = useState(JSON.parse(localStorage.favorites).find((x) => x === item.unique_token));
+    const dispatch = useDispatch();
+    const nav = useNavigate();
+
+    const handleFavoritesChange = () => {
+        let favorites = JSON.parse(localStorage.getItem('favorites'));
+        setFavorite(!favorite)
+        if (!favorite) {
+            favorites.push(item.unique_token);
+        } else {
+            favorites = favorites.filter((x) => x !== item.unique_token);
+        }
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        dispatch(setFavoritesCount(favorites.length))
+    }
+
+    const handleDiscussionDeletion = () => {
+        if(favorite){
+            let favorites = JSON.parse(localStorage.getItem('favorites'));
+            favorites = favorites.filter((x) => x !== item.unique_token);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            dispatch(setFavoritesCount(favorites.length))
+        }
+        http.get(`requestDiscussionDeletion/${item.unique_token}`).then( res => {
+            if(!res.success && res.message === 'Not logged in'){
+                dispatch(resetUser())
+                nav('/login')
+            }
+            if(res.success){
+                dispatch(decreaseTopicCount())
+                setUserItems(useritems.filter( x => x._id !== item._id ))
+            }
+        })
+    }
+
+    const handleDiscussionEdit = () => {
+        dispatch(setItem(item));
+        nav(`/updateDiscussion/${item.unique_token}`);
+    }
 
     return (
-        <div className='d-flex justify-content-between m-1 p-3 smallItem'>
-            <div className='d-flex flex-column'>
+        <div
+            className='d-flex flex-sm-column flex-md-row flex-wrap justify-content-between m-1 p-3 smallItem position-relative'>
+            <div onClick={handleFavoritesChange} className={'position-absolute bookmark'}>{favorite ? <FaBookmark/> :
+                <FaRegBookmark/>}</div>
+            <div className='d-flex flex-column flex-2 p-1'>
                 <h5>{item.title.charAt(0).toUpperCase() + item.title.slice(1)}</h5>
                 <p style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{__html: item.description}}/>
-
             </div>
-            <div className='d-flex flex-column'>
+            <div className='d-flex flex-column flex-1 p-1'>
                 <p>Current post count: <span>{item.post_count}</span></p>
-                <p>Last modified tototoodddddddddddddddtotototooto</p>
+                <p>Last updated: <span>{new Date(item.lastModified).toLocaleString('lt-LT')}</span></p>
+                <div className='d-flex justify-content-evenly discussionManipulationButtons'>
+                    <div onClick={handleDiscussionEdit}><h6>Edit <RiEdit2Fill/></h6></div>
+                    <div onClick={handleDiscussionDeletion}><h6>Delete <RiDeleteBack2Fill/></h6></div>
+
+                </div>
             </div>
         </div>
     );

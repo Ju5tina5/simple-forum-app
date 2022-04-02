@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './style.css';
 
-const InputComp = React.forwardRef(({type, text}, ref) => {
+const InputComp = React.forwardRef(({type, text, defaultValue}, ref) => {
 
     const [allowed, setAllowed] = useState(false)
 
@@ -10,6 +10,13 @@ const InputComp = React.forwardRef(({type, text}, ref) => {
             if (event.target.value.length < 5 || event.target.value.length > 15) {
                 setAllowed(false)
             } else {
+                setAllowed(true)
+            }
+        }
+        if(text === 'Url' && type === 'text'){
+            if(!/^https?:\/\/.+\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(event.target.value)){
+                setAllowed(false)
+            } else{
                 setAllowed(true)
             }
         }
@@ -40,7 +47,7 @@ const InputComp = React.forwardRef(({type, text}, ref) => {
         <>
             <label htmlFor={text}>{text} <span>*</span></label>
             <input onChange={(e) => validateInput(e)} className={allowed ? 'clear' : 'danger'} ref={ref} type={type}
-                   placeholder={text}/>
+                   placeholder={text} defaultValue={defaultValue ? defaultValue : ''}/>
         </>
     );
 });

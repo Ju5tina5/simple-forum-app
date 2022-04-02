@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import http from "../../plugins/http";
-import MiniDisscusionDisplay from "../TopicComponents/MiniDisscusionDisplay";
 import SmallUserDiscussionComp from "./SmallUserDiscussionComp";
 import SmallUserPostComp from "./SmallUserPostComp";
+import {useSelector} from "react-redux";
 
 const UserDiscussions = ({type}) => {
+
 
     const [displayNumber, setDisplayNumber] = useState(5)
     const [userItems, setUserItems] = useState(null);
@@ -15,14 +16,14 @@ const UserDiscussions = ({type}) => {
                 setUserItems(res.userItems)
             }
         })
-    }, [displayNumber])
+    }, [type, displayNumber])
 
     return (
         <div className={'d-flex flex-column align-items-center'}>
             {userItems && userItems.map( (x, i) =>
                 x.hasOwnProperty('post_count')
-                    ? <SmallUserDiscussionComp key={i} item={x}/>
-                    : <SmallUserPostComp key={i} item={x}/>
+                    ? <SmallUserDiscussionComp key={i} item={x} setUserItems={setUserItems} useritems={userItems}/>
+                    : <SmallUserPostComp key={i} item={x} setUserItems={setUserItems} useritems={userItems}/>
             )}
         </div>
     );

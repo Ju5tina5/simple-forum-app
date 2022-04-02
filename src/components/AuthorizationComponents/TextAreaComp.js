@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './style.css';
 
-const TextAreaComp = React.forwardRef(({text}, ref) => {
+const TextAreaComp = React.forwardRef(({text, defaultValue}, ref) => {
 
     const [allowed, setAllowed] = useState(false)
 
@@ -21,7 +21,7 @@ const TextAreaComp = React.forwardRef(({text}, ref) => {
                  id={text}
                       rows={5}
                  ref={ref}
-                 placeholder={text} />
+                 placeholder={text} defaultValue={defaultValue ? defaultValue : ''}/>
         </>
     );
 })

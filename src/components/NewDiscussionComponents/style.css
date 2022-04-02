@@ -5,6 +5,7 @@
     user-select: none;
     transition: 0.5s;
     font-weight: 600;
+    width: 150px;
 }
 
 .createBtn:hover{

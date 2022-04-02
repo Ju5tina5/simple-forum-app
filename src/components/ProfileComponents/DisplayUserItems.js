@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 import './style.css';
 import UserDiscussions from "./UserDiscussions";
+import CreateTopicButton from "../NewDiscussionComponents/CreateTopicButton";
 
 const DisplayUserItems = () => {
 
@@ -14,7 +15,7 @@ const DisplayUserItems = () => {
                 <div
                     onClick={() => setCurrentlyActive(0)}
                     className={`${currentlyActive === 0 ? 'active' : ''} button flex-grow-1`}>
-                    Topics <span>{userCountData.topicsCount}</span>
+                    Discussions <span>{userCountData.topicsCount}</span>
                 </div>
                 |
                 <div
@@ -24,8 +25,16 @@ const DisplayUserItems = () => {
                 </div>
             </div>
             <div>
-                {currentlyActive === 0 && userCountData.topicsCount > 0 && <UserDiscussions type={'discussions'}/>}
-                {currentlyActive === 0 && userCountData.topicsCount === 0 && <h4 className='p-5'>No topics yet</h4>}
+                {currentlyActive === 0 && userCountData.topicsCount > 0 &&
+                    <>
+                        <CreateTopicButton />
+                        <UserDiscussions type={'discussions'}/>
+                    </>}
+                {currentlyActive === 0 && userCountData.topicsCount === 0 &&
+                    <>
+                        <CreateTopicButton />
+                        <h4 className='p-5'>No discussion yet</h4>
+                    </>}
                 {currentlyActive === 1 && userCountData.postsCount > 0 && <UserDiscussions type={'posts'}/>}
                 {currentlyActive === 1 && userCountData.postsCount === 0 && <h4 className='p-5'>No posts yet</h4>}
             </div>

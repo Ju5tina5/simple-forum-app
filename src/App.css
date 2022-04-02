@@ -5,12 +5,13 @@
     background-color: var(--secondary-bg-color);
 }
 
+
 h2{
     font-size: 2em;
     color: var(--text-color);
 }
 
-h2, h3, h4, h5, a{
+h2, h3, h4, h5, h6, a{
     color: var(--text-color);
 }
 
@@ -25,8 +26,12 @@ a{
     transition: 0.4s;
 }
 
-h2 > a:hover{
+a:hover{
     color: var(--text-color);
+}
+
+
+h2 > a:hover, p > a:hover{
     text-decoration: underline var(--text-color);
 }
 
@@ -42,7 +47,21 @@ h2 > a:hover{
     color: var(--main-bg-color)
 }
 
-@media (max-width: 550px) {
+.flex-2{
+    flex: 2;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+@media (max-width: 968px) {
+    .App{
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
     .App{
         width: 90%;
     }

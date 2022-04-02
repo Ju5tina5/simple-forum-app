@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
+import CreateDiscussionComp from "../components/NewDiscussionComponents/CreateDiscussionComp";
 import {useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import CreateDiscussionComp from "../components/NewDiscussionComponents/CreateDiscussionComp";
 
-const NewDiscussionPage = () => {
+const UpdateDiscussionPage = () => {
 
     const user = useSelector(state => state.user.value)
     const nav = useNavigate();
@@ -15,10 +15,10 @@ const NewDiscussionPage = () => {
 
     return (
         <div>
-            <h2>New Discussion</h2>
-            <CreateDiscussionComp type='Create'/>
+            <h2>Update Discussion</h2>
+            <CreateDiscussionComp type='Update'/>
         </div>
     );
 };
 
-export default NewDiscussionPage;
+export default UpdateDiscussionPage;

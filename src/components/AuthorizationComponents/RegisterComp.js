@@ -10,7 +10,6 @@ const RegisterComp = () => {
 
     const [error, setError] = useState(null);
     const nav = useNavigate();
-    const dispatch = useDispatch();
 
     const refs = {
         user_name: useRef(),
