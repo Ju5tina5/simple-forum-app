@@ -22,8 +22,8 @@ const UserDiscussions = ({type}) => {
         <div className={'d-flex flex-column align-items-center'}>
             {userItems && userItems.map( (x, i) =>
                 x.hasOwnProperty('post_count')
-                    ? <SmallUserDiscussionComp key={i} item={x} setUserItems={setUserItems} useritems={userItems}/>
-                    : <SmallUserPostComp key={i} item={x} setUserItems={setUserItems} useritems={userItems}/>
+                    ? <SmallUserDiscussionComp key={i} item={x} setUserItems={setUserItems} userItems={userItems}/>
+                    : <SmallUserPostComp key={i} item={x} setUserItems={setUserItems} userItems={userItems}/>
             )}
         </div>
     );

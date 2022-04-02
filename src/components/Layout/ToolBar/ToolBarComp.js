@@ -29,7 +29,6 @@ const ToolBarComp = () => {
                 <Link to={`/profile`}>{userLoggedIn.user_name} Profile</Link>
                 <div className={`logoutDiv`} onClick={handleUserLogOut}><RiLogoutBoxLine />Logout</div>
                 <Link to={'/saved'}>Favorites <RiBookmarkFill /> {favoritesCount > 0 && favoritesCount}</Link>
-
             </div>
         );
     }else{

@@ -55,6 +55,14 @@ h2 > a:hover, p > a:hover{
     flex: 1;
 }
 
+.clickable{
+    cursor: pointer;
+}
+
+.clickable:hover{
+    text-decoration: underline var(--text-color);
+}
+
 @media (max-width: 968px) {
     .App{
         width: 80%;
