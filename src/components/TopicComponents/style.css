@@ -24,10 +24,16 @@
 }
 
 .singleDiscussionWrapper{
-    margin-top: 5px;
+    margin-top: 8px;
     width: 90%;
     color: var(--decoration-color);
     background-color: var(--secondary-bg-color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.singleDiscussionWrapper:hover{
+    box-shadow: 0 0 2px 1px var(--decoration-color);
 }
 
 .singleDiscussionWrapper > strong{

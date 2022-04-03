@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const PaginationComp = ({itemCount, currentPage, setCurrentPage}) => {
+const PaginationComp = ({itemCount, currentPage, setCurrentPage, setLoading}) => {
 
     let pageArray = [];
     for (let i = 1; i <= Math.ceil(itemCount / 10); i++) {
@@ -9,18 +9,29 @@ const PaginationComp = ({itemCount, currentPage, setCurrentPage}) => {
     }
 
     return (
-        <div className='d-flex'>
+        <div className='d-flex mt-2'>
             {currentPage * 10 - 10 < itemCount && currentPage * 10 - 10 >= 10 &&
-            <p onClick={() => setCurrentPage(currentPage - 1)} className={'notActive'}>Previous</p>}
+            <p onClick={() =>
+            {
+                setLoading(true)
+                setCurrentPage(currentPage - 1)
+            }} className={'notActive'}>Previous</p>}
             {pageArray.map((x, i) =>
                 currentPage > x &&
-                <p key={i} onClick={() => setCurrentPage(currentPage - 1)} className={'notActive'}>{x}</p>)}
+                <p key={i} onClick={() => {
+                    setLoading(true)
+                    setCurrentPage(currentPage - 1)}} className={'notActive'}>{x}</p>)}
             <p className='activePageNumber'>{currentPage}</p>
             {pageArray.map((x, i) =>
                 x > currentPage &&
-                <p key={i} onClick={() => setCurrentPage(currentPage + 1)} className={'notActive'}>{x}</p>)}
+                <p key={i} onClick={() => {
+                    setLoading(true)
+                    setCurrentPage(currentPage + 1)}} className={'notActive'}>{x}</p>)}
             {itemCount > currentPage * 10 &&
-            <p onClick={() => setCurrentPage(currentPage + 1)} className={'notActive'}>Next</p>}
+            <p onClick={() => {
+                setLoading(true)
+                setCurrentPage(currentPage + 1)}
+            } className={'notActive'}>Next</p>}
         </div>
     );
 };

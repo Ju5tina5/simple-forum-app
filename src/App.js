@@ -14,6 +14,8 @@ import NewDiscussionPage from "./pages/NewDiscussionPage";
 import UpdateDiscussionPage from "./pages/UpdateDiscussionPage";
 import DiscussionsPage from "./pages/DiscussionsPage";
 import FavoritesPage from "./pages/FavoritesPage";
+import SingleDiscussionPage from "./pages/SingleDiscussionPage";
+import LoadingComponent from "./components/Layout/Loading/LoadingComponent";
 
 function App() {
 
@@ -33,6 +35,7 @@ function App() {
                         <Route path='/newDiscussion' element={<NewDiscussionPage />}/>
                         <Route path='/updateDiscussion/:token' element={<UpdateDiscussionPage />}/>
                         <Route path='/Discussions/:topic' element={<DiscussionsPage />}/>
+                        <Route path='/SingleDiscussion/:token' element={<SingleDiscussionPage />}/>
                         <Route path='/saved' element={<FavoritesPage />}/>
                         <Route path='*' element={<ErrorPage/>}/>
                     </Routes>

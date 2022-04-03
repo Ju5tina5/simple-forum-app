@@ -1,0 +1,13 @@
+.loadingWrapper{
+    background-color: var(--main-bg-color);
+    min-height: 350px;
+}
+
+.loadAnim{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    animation: rotate 1.5s infinite;
+    background-image: url("../../../assets/3IsJ.gif");
+    background-size: 100% 100%;
+}

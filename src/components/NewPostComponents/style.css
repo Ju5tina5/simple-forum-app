@@ -1,0 +1,26 @@
+.cardWrapper{
+    width: 100%;
+}
+
+.userInfo > img{
+    width: 80%;
+    padding: 10px;
+}
+
+.messageInfo{
+    background-color: var(--secondary-bg-color);
+}
+
+.messageInfo > p{
+    box-shadow: 0 1px 0 0 var(--decoration-color);
+}
+
+.messageInfo > div{
+    color: var(--decoration-color);
+}
+
+.messageInfo > div > img{
+    align-self: center;
+    max-width: 100%;
+    max-height: 250px;
+}

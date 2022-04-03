@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {FaBookmark, FaRegBookmark} from 'react-icons/fa';
 import {RiEdit2Fill, RiDeleteBack2Fill} from 'react-icons/ri'
+import {HiCursorClick} from 'react-icons/hi';
 import {useDispatch, useSelector} from "react-redux";
 import {setItem} from "../../features/updatingItemSlice";
 import {resetUser, setFavoritesCount, decreaseTopicCount} from "../../features/userSlice";
@@ -15,6 +16,12 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
     const dispatch = useDispatch();
     const nav = useNavigate();
     const location = useLocation();
+
+    useEffect(() => {
+        setFavorite(
+            JSON.parse(localStorage.favorites).find((x) => x === item.unique_token)
+        );
+    }, [localStorage.favorites, item]);
 
     const handleFavoritesChange = () => {
         let favorites = JSON.parse(localStorage.getItem('favorites'));
@@ -62,10 +69,13 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
     return (
         <div
             className='d-flex flex-sm-column flex-md-row flex-wrap justify-content-between m-1 p-3 smallItem position-relative'>
-            <div onClick={handleFavoritesChange} className={'position-absolute bookmark'}>{favorite ? <FaBookmark/> :
-                <FaRegBookmark/>}</div>
+            <div onClick={handleFavoritesChange} className={'position-absolute bookmark'}>
+                {favorite ? <FaBookmark/> :
+                <FaRegBookmark/>}
+            </div>
             <div className='d-flex flex-column flex-2 p-1'>
-                <h5 className='clickable'>{item.title.charAt(0).toUpperCase() + item.title.slice(1)}</h5>
+                <h5 onClick={ () => nav(`/SingleDiscussion/${item.unique_token}`)}
+                    className='clickable'>{item.title.charAt(0).toUpperCase() + item.title.slice(1)}<HiCursorClick /></h5>
                 <p style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{__html: item.description}}/>
             </div>
             <div className='d-flex flex-column flex-1 p-1'>

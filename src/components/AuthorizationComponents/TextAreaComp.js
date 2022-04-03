@@ -6,7 +6,7 @@ const TextAreaComp = React.forwardRef(({text, defaultValue}, ref) => {
     const [allowed, setAllowed] = useState(false)
 
     const validateTextArea = (event) => {
-        if (event.target.value.length < 50 || event.target.value.length > 500) {
+        if (event.target.value.length < 50 || event.target.value.length > 1000) {
             setAllowed(false)
         } else {
             setAllowed(true)

@@ -3,6 +3,7 @@ import './style.css';
 import {BiPlus, BiMinus} from 'react-icons/bi'
 import MiniDiscussionsDisplay from "./MiniDisscusionDisplay";
 import {useNavigate} from "react-router-dom";
+import {HiCursorClick} from "react-icons/hi";
 
 const TopicComp = ({item}) => {
 
@@ -18,7 +19,7 @@ const TopicComp = ({item}) => {
     return (
         <>
             <div className={'d-flex align-items-center m-2 topicWrapper'}>
-                <h4 onClick={() => nav(`/Discussions/${item.name}`)} className='clickable'>{item.name}</h4>
+                <h4 onClick={() => nav(`/Discussions/${item.name}`)} className='clickable'>{item.name} <HiCursorClick /></h4>
                 <p>{item.description}</p>
                 <div onClick={() => setLoaded(!loaded)} className={'justify-end'}>
                     {loaded ? <BiMinus /> : <BiPlus />}

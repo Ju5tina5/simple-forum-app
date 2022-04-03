@@ -90,9 +90,10 @@ const CreateDiscussionComp = ({type}) => {
                     <InputComp type='text' ref={refs.subject} text='Subject' defaultValue={item && item.title}/>
                 </div>
                 <div className={'d-flex flex-column inputWrapper'}>
-                    <p>Discussion description should be from 50 to 500 symbols long</p>
+                    <p>Discussion description should be from 50 to 1000 symbols long</p>
                     <TextAreaComp ref={refs.description} text='Description' defaultValue={item && item.description}/>
                 </div>
+                =
                 <div className={'d-flex justify-content-between inputWrapper'}>
                     <p>Fields marked with <span>*</span> are required</p>
                     {error && <span>{error}</span>}
