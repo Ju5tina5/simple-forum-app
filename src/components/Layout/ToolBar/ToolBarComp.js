@@ -25,7 +25,7 @@ const ToolBarComp = () => {
     if(userLoggedIn){
         return (
             <div className={'toolBar'}>
-                <Link to={'/'}>Discussions</Link>
+                <Link to={'/'}>Main</Link>
                 <Link to={`/profile`}>{userLoggedIn.user_name} Profile</Link>
                 <div className={`logoutDiv`} onClick={handleUserLogOut}><RiLogoutBoxLine />Logout</div>
                 <Link to={'/saved'}>Favorites <RiBookmarkFill /> {favoritesCount > 0 && favoritesCount}</Link>
@@ -34,7 +34,7 @@ const ToolBarComp = () => {
     }else{
         return (
             <div className={'toolBar'}>
-                <Link to={'/'}>Discussions</Link>
+                <Link to={'/'}>Main</Link>
                 <Link to={'/login'}>Login</Link>
                 <Link to={'/register'}>Register</Link>
                 <Link to={'/saved'}>Favorites <RiBookmarkFill /> {favoritesCount > 0 && favoritesCount}</Link>

@@ -13,7 +13,6 @@ const DiscussionsComp = () => {
 
     useEffect(() => {
         http.get(`getDiscussions/${topic}/${currentPage}`).then(res => {
-            console.log(res)
             if(res.success){
                 setAllItemsCount(res.discussionsCount)
                 setItems(res.foundDiscussions)
@@ -23,13 +22,13 @@ const DiscussionsComp = () => {
 
     return (
         <div className={'d-flex flex-column justify-content-center align-items-center'}>
+            {allItemsCount > 10 && <PaginationComp itemCount={allItemsCount} currentPage={currentPage} setCurrentPage={setCurrentPage}/>}
             {items.length > 0 ?
                 items.map((x, i) => <SmallUserDiscussionComp key={i} item={x} userItems={items} setUserItems={setItems}/>)
                 :
                 <h2 className='w-100 text-center p-5'>No discussios in this topic yet</h2>
             }
             {allItemsCount > 10 && <PaginationComp itemCount={allItemsCount} currentPage={currentPage} setCurrentPage={setCurrentPage}/>}
-
         </div>
     );
 };

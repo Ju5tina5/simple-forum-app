@@ -6,7 +6,7 @@ import {setItem} from "../../features/updatingItemSlice";
 import {resetUser, setFavoritesCount, decreaseTopicCount} from "../../features/userSlice";
 import './style.css'
 import http from "../../plugins/http";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useLocation} from "react-router-dom";
 
 const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
 
@@ -14,6 +14,7 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
     const [favorite, setFavorite] = useState(JSON.parse(localStorage.favorites).find((x) => x === item.unique_token));
     const dispatch = useDispatch();
     const nav = useNavigate();
+    const location = useLocation();
 
     const handleFavoritesChange = () => {
         let favorites = JSON.parse(localStorage.getItem('favorites'));
@@ -21,6 +22,13 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
         if (!favorite) {
             favorites.push(item.unique_token);
         } else {
+            if(location.pathname === "/saved"){
+                let arr = []
+                for (let i = 0; i < userItems.length; i++) {
+                    if(userItems[i].unique_token !== item.unique_token) arr.push(userItems[i])
+                }
+                setUserItems([...arr])
+            }
             favorites = favorites.filter((x) => x !== item.unique_token);
         }
         localStorage.setItem("favorites", JSON.stringify(favorites));
