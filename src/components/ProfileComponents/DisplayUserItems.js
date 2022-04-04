@@ -13,7 +13,9 @@ const DisplayUserItems = () => {
         <div className={'d-flex flex-column profileWrapper mt-2'}>
             <div className='d-flex text-center w-100'>
                 <div
-                    onClick={() => setCurrentlyActive(0)}
+                    onClick={() => {
+                        setCurrentlyActive(0)
+                    }}
                     className={`${currentlyActive === 0 ? 'active' : ''} button flex-grow-1`}>
                     Discussions <span>{userCountData.topicsCount}</span>
                 </div>

@@ -2,7 +2,7 @@
     background-color: var(--main-bg-color);
 }
 
-.profileWrapper > img {
+.profileWrapper  img {
     height: 250px;
     width: 250px;
 }
@@ -64,4 +64,50 @@
     color: var(--main-bg-color);
 }
 
+.activity{
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+}
 
+.newActivity{
+    animation: important 1.5s infinite alternate;
+}
+
+.activity:hover{
+    text-decoration: underline 1px var(--text-color);
+}
+
+@keyframes important {
+    to{
+        color: var(--text-color);
+    }
+}
+
+.activityWrapper{
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.singleActivity{
+    width: 90%;
+    box-shadow: 0 0 2px 0 var(--decoration-color);
+}
+
+.allActivityResetButton{
+
+}
+
+.activityWrapper::-webkit-scrollbar{
+    width: 5px;
+}
+
+.activityWrapper::-webkit-scrollbar-track{
+    background: #EEEDDE;
+}
+
+.activityWrapper::-webkit-scrollbar-thumb{
+    height: 100px;
+    background: var(--main-bg-color);
+}

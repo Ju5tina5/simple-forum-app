@@ -6,6 +6,7 @@ export const userSlice = createSlice({
         value: null,
         counts: {topicsCount: 0, postsCount: 0},
         favorites: localStorage.getItem('favorites') ? JSON.parse(localStorage.favorites).length : 0,
+        seenActivities: false,
     },
     reducers: {
         setUser: (state, action) => {
@@ -25,10 +26,16 @@ export const userSlice = createSlice({
         },
         decreaseTopicCount: state => {
             state.counts.topicsCount -= 1;
+        },
+        decreasePostsCount: state => {
+            state.counts.postsCount -=1
+        },
+        setSeenActivities: state => {
+            state.seenActivities = true
         }
     }
 })
 
-export const {setUser, resetUser, setCounts, setFavoritesCount, updateUserAvatar, decreaseTopicCount} = userSlice.actions;
+export const {setUser, resetUser, setCounts, setFavoritesCount, updateUserAvatar, decreaseTopicCount, decreasePostsCount, setSeenActivities} = userSlice.actions;
 
 export default userSlice.reducer;

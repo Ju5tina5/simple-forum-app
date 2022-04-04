@@ -3,9 +3,7 @@ import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import http from "../../plugins/http";
 import LargeDiscussionComp from "./LargeDiscussionComp";
-import SinglePostComp from "../NewPostComponents/SinglePostComp";
 import PostListComp from "../NewPostComponents/PostListComp";
-import NewPostComp from "../NewPostComponents/NewPostComp";
 
 
 const SingleDiscussionComp = () => {
@@ -30,6 +28,7 @@ const SingleDiscussionComp = () => {
                     <LargeDiscussionComp item={discussion}/>
                     <PostListComp token={token} user={user} discussion={discussion} setDiscussion={setDiscussion}/>
                 </>}
+
         </div>
     );
 };

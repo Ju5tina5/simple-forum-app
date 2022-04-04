@@ -3,8 +3,6 @@ import SingleDiscussionComp from "../components/DisscussionsDisplayComponents/Si
 
 
 const SingleDiscussionPage = () => {
-
-
     return (
         <div className={'d-flex flex-column main-bg mt-3 p-1'}>
             <SingleDiscussionComp />

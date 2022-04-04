@@ -3,7 +3,7 @@ import TextAreaComp from "../AuthorizationComponents/TextAreaComp";
 import http from "../../plugins/http";
 import {useNavigate, useParams} from "react-router-dom";
 
-const NewPostComp = ({setDiscussion, discussion, setReload}) => {
+const NewPostComp = ({setDiscussion, setReload, setCurrentPage}) => {
 
     const {token} = useParams();
 
@@ -28,7 +28,9 @@ const NewPostComp = ({setDiscussion, discussion, setReload}) => {
             }
             if(res.success){
                 setDiscussion(res.updatedDiscussion)
+                setCurrentPage(1)
                 setReload(true)
+                textRef.current.value = '';
             }else {
                 setError(res.message)
             }

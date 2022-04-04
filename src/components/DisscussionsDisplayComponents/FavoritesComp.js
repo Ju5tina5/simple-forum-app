@@ -27,6 +27,8 @@ const FavoritesComp = () => {
                     setLoading(false)
                 }
             })
+        }else{
+            setLoading(false)
         }
     }, [localStorage.favorites])
 

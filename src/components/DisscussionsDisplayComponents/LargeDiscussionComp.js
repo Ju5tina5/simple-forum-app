@@ -1,18 +1,10 @@
-import React, {useState} from 'react';
-import CreatePostButton from "../NewPostComponents/CreatePostButton";
-import {useSelector} from "react-redux";
-import NewPostComp from "../NewPostComponents/NewPostComp";
+import React from 'react';
+
 
 const LargeDiscussionComp = ({item}) => {
 
-    const user = useSelector(state => state.user.value);
-    const [commentModal, setCommentModal] = useState(false);
-
-    console.log(item)
-
     return (
         <div className={'d-flex flex-column topicWrapper p-2'}>
-            {user && <CreatePostButton />}
             <h3 className={'text-center'}>{item.title.charAt(0).toUpperCase() + item.title.slice(1)}</h3>
             <div className='d-flex align-items-center justify-content-center text-center mt-2 pt-1 infoWrapper'>
                 <p style={{whiteSpace: "pre-wrap"}} className='flex-2 m-1' dangerouslySetInnerHTML={{__html: item.description}}/>

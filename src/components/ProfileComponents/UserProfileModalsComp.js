@@ -4,6 +4,7 @@ import {VscChromeClose} from 'react-icons/vsc'
 import DeletionModal from "./UserProfileModals/DeletionModal";
 import PhotoUpdateModal from "./UserProfileModals/PhotoUpdateModal";
 import PasswordUpdateModal from "./UserProfileModals/PasswordUpdateModal";
+import ActivityModal from "./UserProfileModals/ActivityModal";
 
 const UserProfileModalsComp = ({type, setShowModal}) => {
 
@@ -29,6 +30,7 @@ const UserProfileModalsComp = ({type, setShowModal}) => {
             {type === 'password' && <PasswordUpdateModal setError={setError} setShowModal={setShowModal}/>}
             {type === 'picture' && <PhotoUpdateModal setError={setError} setShowModal={setShowModal}/>}
             {type === 'deletion' && <DeletionModal setError={setError}/>}
+            {type === 'notifications' && <ActivityModal setError={setError}/>}
             {error && <span>{error}</span>}
         </div>
     );
