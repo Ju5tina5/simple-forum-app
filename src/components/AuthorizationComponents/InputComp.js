@@ -14,6 +14,7 @@ const InputComp = React.forwardRef(({type, text, defaultValue}, ref) => {
             }
         }
         if(text === 'Url' && type === 'text'){
+            // check if link provided really an image
             if(!/^https?:\/\/.+\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(event.target.value)){
                 setAllowed(false)
             } else{
@@ -28,6 +29,7 @@ const InputComp = React.forwardRef(({type, text, defaultValue}, ref) => {
             }
         }
         if (type === 'email') {
+            //check if email
             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value)) {
                 setAllowed(true)
             } else {

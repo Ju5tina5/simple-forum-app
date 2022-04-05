@@ -1,7 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {setUser} from "../../features/userSlice";
 import './style.css';
 import InputComp from "./InputComp";
 import http from "../../plugins/http";
@@ -26,6 +24,8 @@ const RegisterComp = () => {
             password: refs.password.current.value,
             passwordTwo: refs.passwordTwo.current.value
         }
+
+        // data verifications
         if( obj.user_name.length < 5 || obj.user_name.length > 15){
             return setError('User name should be from 5 to 15 symbols long')
         }

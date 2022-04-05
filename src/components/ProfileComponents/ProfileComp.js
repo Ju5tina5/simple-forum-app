@@ -47,28 +47,32 @@ const ProfileComp = () => {
     return (
         <>
             {user &&
-            <div className='d-flex flex-wrap justify-content-evenly profileWrapper'>
-                {showModal.type && <ModalWrapper onClick={handleModalClose}><UserProfileModalsComp type={showModal.type}
-                                                                                                   setShowModal={setShowModal}/></ModalWrapper>}
-                <img className={'m-2 flex-1'} src={user.avatar} alt=""/>
-                <div className='d-flex  flex-1 flex-column m-2'>
+            <div className='d-flex justify-content-center profileWrapper p-1'>
+                {showModal.type && <ModalWrapper
+                    onClick={handleModalClose}><UserProfileModalsComp
+                    type={showModal.type}
+                    setShowModal={setShowModal}/>
+                </ModalWrapper>}
+                <div className='d-flex flex-column'>
+                    <img className={'m-2'} src={user.avatar} alt=""/>
+                    <h4>{user.user_name}</h4>
                     <h4>Email: {user.email}</h4>
-                    <h4>User name: {user.user_name}</h4>
+
                     <h4>User since: {new Date(user.register_date).toLocaleDateString('lt-LT')}</h4>
                     <h4>Discussions: {userCountData.topicsCount}</h4>
                     <h4>Posts: {userCountData.postsCount}</h4>
                     {user.newActivity.length > 0 &&
                     <div
-                        className={seenActivities ? 'activity' : 'newActivity'}
-                        onClick={() => handleModalOpen('notifications')}>{seenActivities ? 'Recent comments: ' : 'New comments: '} {user.newActivity.length}</div>}
-                </div>
-                <div className={'iconsWrapper d-flex flex-1 flex-column m-2'}>
-                    <div className={'d-flex p-1'} onClick={() => handleModalOpen('password')}><h4>Update password</h4>
-                        <RiLockPasswordFill/></div>
-                    <div className={'d-flex p-1'} onClick={() => handleModalOpen('picture')}><h4>Change profile
-                        picture</h4><AiFillPicture/></div>
-                    <div className={'d-flex p-1'} onClick={() => handleModalOpen('deletion')}><h4>Delete profile</h4>
-                        <AiFillDelete/></div>
+                        className={!seenActivities ? 'activity' : 'newActivity'}
+                        onClick={() => handleModalOpen('notifications')}>{!seenActivities ? 'Recent comments: ' : 'New comments: '} {user.newActivity.length}</div>}
+                    <div className={'iconsWrapper d-flex flex-column mt-2'}>
+                        <div className={'d-flex'} onClick={() => handleModalOpen('password')}><h4>Update password</h4>
+                            <RiLockPasswordFill/></div>
+                        <div className={'d-flex'} onClick={() => handleModalOpen('picture')}><h4>Change profile
+                            picture</h4><AiFillPicture/></div>
+                        <div className={'d-flex'} onClick={() => handleModalOpen('deletion')}><h4>Delete profile</h4>
+                            <AiFillDelete/></div>
+                    </div>
                 </div>
             </div>
             }

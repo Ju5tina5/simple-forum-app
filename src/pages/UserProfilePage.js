@@ -6,8 +6,11 @@ const UserProfilePage = () => {
     return (
         <div>
             <h2>Profile</h2>
-            <ProfileComp />
-            <DisplayUserItems />
+            <div className='d-flex flex-column flex-lg-row flex-wrap'>
+                <ProfileComp />
+                <DisplayUserItems />
+            </div>
+
         </div>
     );
 };

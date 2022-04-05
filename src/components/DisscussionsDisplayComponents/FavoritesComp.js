@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import http from "../../plugins/http";
 import SmallUserDiscussionComp from "../ProfileComponents/SmallUserDiscussionComp";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {setFavoritesCount} from "../../features/userSlice";
 import LoadingComponent from "../Layout/Loading/LoadingComponent";
 
@@ -17,6 +17,7 @@ const FavoritesComp = () => {
         if(localFavorites.length > 0){
             http.post({localFavorites}, `getFavoriteItems`).then( res => {
                 if(res.success){
+                    // length doesnt match set new favorites to local storage
                     if(localFavorites.length !== res.returnData.length){
                         let newFavorites = [];
                         res.returnData.map( x => newFavorites.push(x.unique_token))

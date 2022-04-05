@@ -33,6 +33,7 @@ const LoginComp = () => {
 
         http.post(obj, 'login').then( res => {
             if(res.success){
+                //setting user data
                 dispatch(setUser(res.user))
                 nav(`/profile`)
             }else{

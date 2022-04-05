@@ -16,6 +16,7 @@ const DiscussionsComp = () => {
     useEffect(() => {
         http.get(`getDiscussions/${topic}/${currentPage}`).then(res => {
             if(res.success){
+                // set total items count/ set current 10 items
                 setAllItemsCount(res.discussionsCount)
                 setItems(res.foundDiscussions)
                 setLoading(false)

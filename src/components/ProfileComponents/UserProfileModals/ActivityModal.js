@@ -12,11 +12,14 @@ const ActivityModal = ({setShowModal}) => {
     const nav = useNavigate();
 
     useEffect( () => {
+        // deletes activity array in database
         http.get('deleteUserActivity').then( res => {
+            console.log(res)
             if(res.success){
                 dispatch(setSeenActivities())
             }
             if(!res.success){
+                document.body.style.overflowY = "scroll";
                 dispatch(resetUser())
                 nav('/login')
             }

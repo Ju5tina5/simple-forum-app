@@ -1,11 +1,13 @@
 .createBtn{
+    text-align: center;
     color: var(--text-color);
     background-color: #545252;
     cursor: pointer;
     user-select: none;
     transition: 0.5s;
     font-weight: 600;
-    width: 150px;
+    width: 200px;
+    font-size: 20px;
 }
 
 .createBtn:hover{

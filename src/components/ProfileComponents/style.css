@@ -2,7 +2,8 @@
     background-color: var(--main-bg-color);
 }
 
-.profileWrapper  img {
+.profileWrapper  img{
+    padding: 10px;
     height: 250px;
     width: 250px;
 }

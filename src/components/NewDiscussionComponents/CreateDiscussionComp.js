@@ -25,10 +25,10 @@ const CreateDiscussionComp = ({type}) => {
 
     const handleNewDiscussionSubmit = (e) => {
 
+        //determinate if upload or update
         let url = type === 'Create' ? 'uploadNewDiscussion' : `updateDiscussion/${token}`;
 
         e.preventDefault();
-
         const discussionObj = {
             topic_name: refs.topic.current.value,
             title: refs.subject.current.value,
@@ -37,7 +37,7 @@ const CreateDiscussionComp = ({type}) => {
 
         const format = /[!@#$%^&*()+\-=\[\]{};':"\\|<>\/]+/;
 
-
+        // check if title have symbols
         if (format.test(discussionObj.title)) {
             return setError("Subject can't contain special symbols");
         }

@@ -31,7 +31,7 @@ export const userSlice = createSlice({
             state.counts.postsCount -=1
         },
         setSeenActivities: state => {
-            state.seenActivities = true
+            state.seenActivities = !state.seenActivities;
         }
     }
 })

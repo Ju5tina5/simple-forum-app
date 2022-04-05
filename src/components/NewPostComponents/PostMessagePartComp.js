@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {RiDeleteBack2Fill, RiEdit2Fill} from "react-icons/ri";
+import {RiDeleteBack2Fill} from "react-icons/ri";
 import http from "../../plugins/http";
 import {useNavigate} from 'react-router-dom';
 import {decreasePostsCount, resetUser} from "../../features/userSlice";

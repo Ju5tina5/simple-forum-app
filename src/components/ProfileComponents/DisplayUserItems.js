@@ -10,7 +10,7 @@ const DisplayUserItems = () => {
     const [currentlyActive, setCurrentlyActive] = useState(0);
 
     return (
-        <div className={'d-flex flex-column profileWrapper mt-2'}>
+        <div className={'d-flex flex-column flex-2 profileWrapper'}>
             <div className='d-flex text-center w-100'>
                 <div
                     onClick={() => {

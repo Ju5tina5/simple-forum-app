@@ -4,6 +4,7 @@ import './style.css';
 const PaginationComp = ({itemCount, currentPage, setCurrentPage, setLoading}) => {
 
     let pageArray = [];
+    // determine how many number there will be
     for (let i = 1; i <= Math.ceil(itemCount / 10); i++) {
         pageArray.push(i)
     }
@@ -20,13 +21,13 @@ const PaginationComp = ({itemCount, currentPage, setCurrentPage, setLoading}) =>
                 currentPage > x &&
                 <p key={i} onClick={() => {
                     setLoading(true)
-                    setCurrentPage(currentPage - 1)}} className={'notActive'}>{x}</p>)}
+                    setCurrentPage(x)}} className={'notActive'}>{x}</p>)}
             <p className='activePageNumber'>{currentPage}</p>
             {pageArray.map((x, i) =>
                 x > currentPage &&
                 <p key={i} onClick={() => {
                     setLoading(true)
-                    setCurrentPage(currentPage + 1)}} className={'notActive'}>{x}</p>)}
+                    setCurrentPage(x)}} className={'notActive'}>{x}</p>)}
             {itemCount > currentPage * 10 &&
             <p onClick={() => {
                 setLoading(true)

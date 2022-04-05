@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {RiLogoutBoxLine, RiBookmarkFill} from 'react-icons/ri';
 import {useSelector, useDispatch} from "react-redux";
-import {resetUser} from "../../../features/userSlice";
+import {resetUser, setSeenActivities} from "../../../features/userSlice";
 import "./style.css";
 import http from "../../../plugins/http";
 
@@ -17,6 +17,7 @@ const ToolBarComp = () => {
         http.get('logout').then( res => {
             if(res.success){
                 nav('/')
+                dispatch(setSeenActivities())
                 dispatch(resetUser())
             }
         })
