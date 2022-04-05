@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/simple-forum-app/static/css/main.16dfe3cb.css",
+    "main.js": "/simple-forum-app/static/js/main.1af095f5.js",
+    "static/js/787.43cca8d4.chunk.js": "/simple-forum-app/static/js/787.43cca8d4.chunk.js",
+    "static/media/3IsJ.gif": "/simple-forum-app/static/media/3IsJ.02f6383feaa18ef019b4.gif",
+    "static/media/caution-background.png": "/simple-forum-app/static/media/caution-background.2b291ded80a0c2a21c6d.png",
+    "index.html": "/simple-forum-app/index.html",
+    "main.16dfe3cb.css.map": "/simple-forum-app/static/css/main.16dfe3cb.css.map",
+    "main.1af095f5.js.map": "/simple-forum-app/static/js/main.1af095f5.js.map",
+    "787.43cca8d4.chunk.js.map": "/simple-forum-app/static/js/787.43cca8d4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16dfe3cb.css",
+    "static/js/main.1af095f5.js"
+  ]
+}
