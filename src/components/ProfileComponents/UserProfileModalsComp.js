@@ -30,7 +30,7 @@ const UserProfileModalsComp = ({type, setShowModal}) => {
             {type === 'password' && <PasswordUpdateModal setError={setError} setShowModal={setShowModal}/>}
             {type === 'picture' && <PhotoUpdateModal setError={setError} setShowModal={setShowModal}/>}
             {type === 'deletion' && <DeletionModal setError={setError}/>}
-            {type === 'notifications' && <ActivityModal setError={setError}/>}
+            {type === 'notifications' && <ActivityModal setError={setError} setShowModal={setShowModal}/>}
             {error && <span>{error}</span>}
         </div>
     );

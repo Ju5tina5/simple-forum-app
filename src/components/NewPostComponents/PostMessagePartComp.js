@@ -14,7 +14,6 @@ const PostMessagePartComp = ({item, userItems, setUserItems, setReload}) => {
 
     const handleSinglePostDeletionRequest = () => {
         http.get(`requestPostDeletion/${item._id}`).then( res => {
-            console.log(res)
             if(res.message === "Not logged in"){
                 dispatch(resetUser())
                 nav('/login')

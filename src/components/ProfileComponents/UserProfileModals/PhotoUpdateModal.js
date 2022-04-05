@@ -47,7 +47,7 @@ const PhotoUpdateModal = ({setError, setShowModal}) => {
     return (
         <div className='d-flex flex-column p-5'>
             <h2>Update user avatar</h2>
-            <div className='d-flex flex-wrap'>
+            <div className='d-flex flex-column flex-wrap flex-md-row'>
                 <div onChange={handleImageChange} className='d-flex flex-column justify-content-center flex-2'>
                     <p>Provide link containing image</p>
                     <InputComp type='text' text='Url' ref={linkRef}/>

@@ -41,7 +41,7 @@ const PostListComp = ({token, user, discussion, setDiscussion}) => {
                 : <h2 className='w-100 text-center p-5'>No Comments yet</h2>
             }
             {discussion.post_count > 10 && <PaginationComp setLoading={setLoading} itemCount={discussion.post_count} currentPage={currentPage} setCurrentPage={setCurrentPage}/>}
-            {user ? <div ref={bottomRef} className={'w-100'}><NewPostComp  setCurrentPage={setCurrentPage} setReload={setReload} setDiscussion={setDiscussion} /></div> : <p><span>*</span>You must be logged in to write comments</p>}
+            {user ? <div ref={bottomRef} className={'w-100'}><NewPostComp setLoading={setLoading} setCurrentPage={setCurrentPage} setReload={setReload} setDiscussion={setDiscussion} /></div> : <p><span>*</span>You must be logged in to write comments</p>}
         </div>
     );
 };

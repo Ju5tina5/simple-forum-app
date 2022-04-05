@@ -5,12 +5,11 @@ import '../style.css';
 import http from "../../../plugins/http";
 import {useNavigate} from "react-router-dom";
 
-const ActivityModal = () => {
+const ActivityModal = ({setShowModal}) => {
 
     const user = useSelector(state => state.user.value)
-    const seenActivities = useSelector( state => state.user.seenActivities)
     const dispatch = useDispatch();
-    const nav = useNavigate;
+    const nav = useNavigate();
 
     useEffect( () => {
         http.get('deleteUserActivity').then( res => {
@@ -24,11 +23,17 @@ const ActivityModal = () => {
         })
     }, [])
 
+    const handlePegaNavigation = (x) => {
+        document.body.style.overflowY = "scroll";
+        setShowModal({ show: false, type: "" })
+        nav(`/SingleDiscussion/${x.discussion_token}`);
+    }
+
     return (
         <div className='d-flex flex-column align-items-center activityWrapper'>
             <h3 className='align-self-start'>New Comments</h3>
             {user.newActivity.map( (x, i) =>
-                <div key={i} className='singleActivity p-2 m-3 text-center'>New comment on <span>{x.posted_on}</span> discussion from <span>{x.post_author}</span></div>)}
+                <div key={i} className='singleActivity p-2 m-3 text-center singleDiscussionWrapper' onClick={() =>  handlePegaNavigation(x)}>New comment in <span>{x.posted_on}</span> discussion from <span>{x.post_author}</span></div>)}
         </div>
     );
 };

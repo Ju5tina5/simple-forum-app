@@ -3,10 +3,9 @@ import TextAreaComp from "../AuthorizationComponents/TextAreaComp";
 import http from "../../plugins/http";
 import {useNavigate, useParams} from "react-router-dom";
 
-const NewPostComp = ({setDiscussion, setReload, setCurrentPage}) => {
+const NewPostComp = ({setDiscussion, setReload, setCurrentPage, setLoading}) => {
 
     const {token} = useParams();
-
     const [error, setError] = useState(null);
     const textRef = useRef();
     const nav = useNavigate();
@@ -23,6 +22,7 @@ const NewPostComp = ({setDiscussion, setReload, setCurrentPage}) => {
         }
 
         http.post(postData, 'createPost').then( res => {
+            setLoading(true)
             if(!res.success && res.message === 'Not logged in'){
                 nav('/login')
             }

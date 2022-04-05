@@ -3,14 +3,17 @@
     color: var(--text-color);
 }
 
+.topicWrapper > div > p{
+    word-break: break-all;
+}
+
 .topicWrapper > * {
     margin: 0;
     padding: 0;
 }
 
-.topicWrapper > h4 {
+.topicWrapper > h3 {
     flex: 1;
-
 }
 
 .topicWrapper > p {

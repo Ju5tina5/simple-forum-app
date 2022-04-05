@@ -9,13 +9,13 @@ const PaginationComp = ({itemCount, currentPage, setCurrentPage, setLoading}) =>
     }
 
     return (
-        <div className='d-flex mt-2'>
+        <div className='d-flex mt-2 w-100 justify-content-center'>
             {currentPage * 10 - 10 < itemCount && currentPage * 10 - 10 >= 10 &&
             <p onClick={() =>
             {
                 setLoading(true)
                 setCurrentPage(currentPage - 1)
-            }} className={'notActive'}>Previous</p>}
+            }} className={'notActive'}>Prev</p>}
             {pageArray.map((x, i) =>
                 currentPage > x &&
                 <p key={i} onClick={() => {

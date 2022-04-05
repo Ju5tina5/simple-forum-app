@@ -43,8 +43,6 @@ const ProfileComp = () => {
         setShowModal({show: true, type: type});
     }
 
-    console.log(user)
-
 
     return (
         <>
@@ -56,12 +54,12 @@ const ProfileComp = () => {
                 <div className='d-flex  flex-1 flex-column m-2'>
                     <h4>Email: {user.email}</h4>
                     <h4>User name: {user.user_name}</h4>
-                    <h4>Registered: {new Date(user.register_date).toLocaleDateString('lt-LT')}</h4>
-                    <h4>Created Discussions: {userCountData.topicsCount}</h4>
-                    <h4>Written posts: {userCountData.postsCount}</h4>
+                    <h4>User since: {new Date(user.register_date).toLocaleDateString('lt-LT')}</h4>
+                    <h4>Discussions: {userCountData.topicsCount}</h4>
+                    <h4>Posts: {userCountData.postsCount}</h4>
                     {user.newActivity.length > 0 &&
                     <div
-                        className={!seenActivities ? 'activity newActivity' : 'activity'}
+                        className={seenActivities ? 'activity' : 'newActivity'}
                         onClick={() => handleModalOpen('notifications')}>{seenActivities ? 'Recent comments: ' : 'New comments: '} {user.newActivity.length}</div>}
                 </div>
                 <div className={'iconsWrapper d-flex flex-1 flex-column m-2'}>

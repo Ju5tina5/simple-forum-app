@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+.userInfo{
+    border: solid 1px var(--decoration-color);
+}
+
 .userInfo > img{
     width: 80%;
     padding: 10px;
@@ -23,4 +27,12 @@
     align-self: center;
     max-width: 100%;
     max-height: 250px;
+}
+
+
+@media (max-width: 768px) {
+    .messageInfo{
+        align-self: center;
+        width: 90%;
+    }
 }

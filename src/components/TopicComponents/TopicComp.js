@@ -18,7 +18,7 @@ const TopicComp = ({item}) => {
 
     return (
         <>
-            <div className={'d-flex align-items-center m-2 topicWrapper'}>
+            <div className={'d-flex flex-column flex-md-row align-items-md-center align-items-start m-2 topicWrapper'}>
                 <h4 onClick={() => nav(`/Discussions/${item.name}`)} className='clickable'>{item.name} <HiCursorClick /></h4>
                 <p>{item.description}</p>
                 <div onClick={() => setLoaded(!loaded)} className={'justify-end'}>

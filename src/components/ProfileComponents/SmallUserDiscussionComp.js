@@ -68,7 +68,7 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
 
     return (
         <div
-            className='d-flex flex-sm-column flex-md-row flex-wrap justify-content-between m-1 p-3 smallItem position-relative'>
+            className='d-flex flex-column flex-sm-column flex-md-row flex-wrap justify-content-between m-1 p-3 smallItem position-relative'>
             <div onClick={handleFavoritesChange} className={'position-absolute bookmark'}>
                 {favorite ? <FaBookmark/> :
                 <FaRegBookmark/>}
@@ -76,7 +76,7 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
             <div className='d-flex flex-column flex-2 p-1'>
                 <h5 onClick={ () => nav(`/SingleDiscussion/${item.unique_token}`)}
                     className='clickable'>{item.title.charAt(0).toUpperCase() + item.title.slice(1)}<HiCursorClick /></h5>
-                <p style={{whiteSpace: "pre-wrap"}} dangerouslySetInnerHTML={{__html: item.description}}/>
+                <p style={{whiteSpace: "pre-wrap", }} dangerouslySetInnerHTML={{__html: item.description}}/>
             </div>
             <div className='d-flex flex-column flex-1 p-1'>
                 <p>Current post count: <span>{item.post_count}</span></p>
