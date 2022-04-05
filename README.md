@@ -40,6 +40,6 @@ Forum web page, developed as cooding-bootcamp asignment.
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/Ju5tina5/simple-forum-app.git](https://github.com/Ju5tina5/simple-forum-app.git)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
