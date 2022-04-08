@@ -16,7 +16,7 @@ const PostMessagePartComp = ({item, userItems, setUserItems, setReload}) => {
         http.get(`requestPostDeletion/${item._id}`).then( res => {
             if(res.message === "Not logged in"){
                 dispatch(resetUser())
-                nav('/login')
+                nav('/simple-forum-app/login')
             }
             if(res.success){
                 let tempArr = userItems.filter( x => x._id !== item._id)

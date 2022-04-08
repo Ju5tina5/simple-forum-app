@@ -23,7 +23,7 @@ const MiniDiscussionsDisplay = ({searchValue}) => {
             {loading && <LoadingComponent />}
             {newestDiscussions.length > 0 &&
             newestDiscussions.map((x, i) =>
-                <div onClick={() => nav(`/SingleDiscussion/${x.unique_token}`)} key={i} className='d-flex flex-column flex-md-row p-2 align-items-center justify-content-center singleDiscussionWrapper'>
+                <div onClick={() => nav(`/simple-forum-app/SingleDiscussion/${x.unique_token}`)} key={i} className='d-flex flex-column flex-md-row p-2 align-items-center justify-content-center singleDiscussionWrapper'>
                     <strong>{x.title.charAt(0).toUpperCase() + x.title.slice(1)}</strong>
                     <p>Total posts: <span>{x.post_count}</span></p>
                     <em className='text-center'>Created {new Date(x.timestamp).toLocaleString('lt-LT')} by <i style={{color: 'var(--text-color)'}}>{x.creator_username}</i> </em>

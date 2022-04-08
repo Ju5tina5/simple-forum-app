@@ -28,16 +28,16 @@ function App() {
                     <TitleComp />
                     <ToolBarComp />
                     <Routes>
-                        <Route path='/login' element={<LoginPage/>}/>
-                        <Route path='/register' element={<RegisterPage/>}/>
-                        <Route path='/' element={<IndexPage/>}/>
-                        <Route path='/profile' element={<UserProfilePage/>}/>
-                        <Route path='/newDiscussion' element={<NewDiscussionPage />}/>
-                        <Route path='/updateDiscussion/:token' element={<UpdateDiscussionPage />}/>
-                        <Route path='/Discussions/:topic' element={<DiscussionsPage />}/>
-                        <Route path='/SingleDiscussion/:token' element={<SingleDiscussionPage />}/>
-                        <Route path='/saved' element={<FavoritesPage />}/>
-                        <Route path='*' element={<ErrorPage/>}/>
+                        <Route path='/simple-forum-app/login' element={<LoginPage/>}/>
+                        <Route path='/simple-forum-app/register' element={<RegisterPage/>}/>
+                        <Route path='/simple-forum-app/' element={<IndexPage/>}/>
+                        <Route path='/simple-forum-app/profile' element={<UserProfilePage/>}/>
+                        <Route path='/simple-forum-app/newDiscussion' element={<NewDiscussionPage />}/>
+                        <Route path='/simple-forum-app/updateDiscussion/:token' element={<UpdateDiscussionPage />}/>
+                        <Route path='/simple-forum-app/Discussions/:topic' element={<DiscussionsPage />}/>
+                        <Route path='/simple-forum-app/SingleDiscussion/:token' element={<SingleDiscussionPage />}/>
+                        <Route path='/simple-forum-app/saved' element={<FavoritesPage />}/>
+                        <Route path='/simple-forum-app/*' element={<ErrorPage/>}/>
                     </Routes>
                     <FooterComp />
                 </div>

@@ -25,7 +25,7 @@ const ProfileComp = () => {
             }
             if (!res.success) {
                 dispatch(resetUser())
-                nav('/login');
+                nav('/simple-forum-app/login');
             }
         })
         if (!user) {
@@ -47,7 +47,7 @@ const ProfileComp = () => {
     return (
         <>
             {user &&
-            <div className='d-flex justify-content-center profileWrapper p-1'>
+            <div className='d-flex justify-content-center profileWrapper p-2'>
                 {showModal.type && <ModalWrapper
                     onClick={handleModalClose}><UserProfileModalsComp
                     type={showModal.type}

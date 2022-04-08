@@ -21,7 +21,7 @@ const ActivityModal = ({setShowModal}) => {
             if(!res.success){
                 document.body.style.overflowY = "scroll";
                 dispatch(resetUser())
-                nav('/login')
+                nav('/simple-forum-app/login')
             }
         })
     }, [])
@@ -29,7 +29,7 @@ const ActivityModal = ({setShowModal}) => {
     const handlePegaNavigation = (x) => {
         document.body.style.overflowY = "scroll";
         setShowModal({ show: false, type: "" })
-        nav(`/SingleDiscussion/${x.discussion_token}`);
+        nav(`/simple-forum-app/SingleDiscussion/${x.discussion_token}`);
     }
 
     return (

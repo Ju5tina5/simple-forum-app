@@ -29,7 +29,7 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
         if (!favorite) {
             favorites.push(item.unique_token);
         } else {
-            if(location.pathname === "/saved"){
+            if(location.pathname === "/simple-forum-app/saved"){
                 let arr = []
                 for (let i = 0; i < userItems.length; i++) {
                     if(userItems[i].unique_token !== item.unique_token) arr.push(userItems[i])
@@ -52,7 +52,7 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
         http.get(`requestDiscussionDeletion/${item.unique_token}`).then(res => {
             if (!res.success && res.message === 'Not logged in') {
                 dispatch(resetUser())
-                nav('/login')
+                nav('/simple-forum-app/login')
             }
             if (res.success) {
                 dispatch(decreaseTopicCount())
@@ -63,7 +63,7 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
 
     const handleDiscussionEdit = () => {
         dispatch(setItem(item));
-        nav(`/updateDiscussion/${item.unique_token}`);
+        nav(`/simple-forum-app/updateDiscussion/${item.unique_token}`);
     }
 
     return (
@@ -74,7 +74,7 @@ const SmallUserDiscussionComp = ({item, setUserItems, userItems}) => {
                 <FaRegBookmark/>}
             </div>
             <div className='d-flex flex-column flex-2 p-1'>
-                <h5 onClick={ () => nav(`/SingleDiscussion/${item.unique_token}`)}
+                <h5 onClick={ () => nav(`/simple-forum-app/SingleDiscussion/${item.unique_token}`)}
                     className='clickable'>{item.title.charAt(0).toUpperCase() + item.title.slice(1)}<HiCursorClick /></h5>
                 <p style={{whiteSpace: "pre-wrap", }} dangerouslySetInnerHTML={{__html: item.description}}/>
             </div>

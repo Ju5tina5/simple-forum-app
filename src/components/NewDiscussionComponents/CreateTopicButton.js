@@ -7,7 +7,7 @@ const CreateTopicButton = () => {
     const nav = useNavigate();
 
     return (
-        <div onClick={() => nav('/newDiscussion')} className='createBtn p-2'>
+        <div onClick={() => nav('/simple-forum-app/newDiscussion')} className='createBtn p-2'>
             Create Discussion
         </div>
     );

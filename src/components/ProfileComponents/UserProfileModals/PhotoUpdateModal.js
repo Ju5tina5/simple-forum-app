@@ -37,7 +37,7 @@ const PhotoUpdateModal = ({setError, setShowModal}) => {
             }else if(!res.success && res.message === 'Not logged in'){
                 document.body.style.overflowY = "scroll";
                 dispatch(resetUser())
-                nav('/login')
+                nav('/simple-forum-app/login')
             }else{
                 setError(res.message)
             }

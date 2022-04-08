@@ -16,7 +16,7 @@ const ToolBarComp = () => {
     const handleUserLogOut = () => {
         http.get('logout').then( res => {
             if(res.success){
-                nav('/')
+                nav('/simple-forum-app/')
                 dispatch(setSeenActivities())
                 dispatch(resetUser())
             }
@@ -26,19 +26,19 @@ const ToolBarComp = () => {
     if(userLoggedIn){
         return (
             <div className={'toolBar'}>
-                <Link to={'/'}>Main</Link>
-                <Link to={`/profile`}>{userLoggedIn.user_name} Profile</Link>
+                <Link to={'/simple-forum-app/'}>Main</Link>
+                <Link to={`/simple-forum-app/profile`}>{userLoggedIn.user_name} Profile</Link>
                 <div className={`logoutDiv`} onClick={handleUserLogOut}><RiLogoutBoxLine />Logout</div>
-                <Link to={'/saved'}>Favorites <RiBookmarkFill /> {favoritesCount > 0 && favoritesCount}</Link>
+                <Link to={'/simple-forum-app/saved'}>Favorites <RiBookmarkFill /> {favoritesCount > 0 && favoritesCount}</Link>
             </div>
         );
     }else{
         return (
             <div className={'toolBar'}>
-                <Link to={'/'}>Main</Link>
-                <Link to={'/login'}>Login</Link>
-                <Link to={'/register'}>Register</Link>
-                <Link to={'/saved'}>Favorites <RiBookmarkFill /> {favoritesCount > 0 && favoritesCount}</Link>
+                <Link to={'/simple-forum-app/'}>Main</Link>
+                <Link to={'/simple-forum-app/login'}>Login</Link>
+                <Link to={'/simple-forum-app/register'}>Register</Link>
+                <Link to={'/simple-forum-app/saved'}>Favorites <RiBookmarkFill /> {favoritesCount > 0 && favoritesCount}</Link>
             </div>
         );
     }

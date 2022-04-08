@@ -35,7 +35,7 @@ const LoginComp = () => {
             if(res.success){
                 //setting user data
                 dispatch(setUser(res.user))
-                nav(`/profile`)
+                nav(`/simple-forum-app/profile`)
             }else{
                 setError(res.message)
             }

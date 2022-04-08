@@ -20,12 +20,12 @@ const DeletionModal = ({setError}) => {
             if(res.success){
                 document.body.style.overflowY = "scroll";
                 dispatch(resetUser())
-                nav('/')
+                nav('/simple-forum-app/')
             }
             if(!res.success){
                 document.body.style.overflowY = "scroll";
                 dispatch(resetUser())
-                nav('/login')
+                nav('/simple-forum-app/login')
             }
         })
     }

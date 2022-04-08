@@ -53,13 +53,13 @@ const CreateDiscussionComp = ({type}) => {
 
         http.post(discussionObj, url).then( res => {
             if(res.success){
-                nav('/profile')
+                nav('/simple-forum-app/profile')
             }
             if(!res.success){
                 setError(res.message)
             }
             if(res.message === 'Not logged in'){
-                nav('/login')
+                nav('/simple-forum-app/login')
             }
         })
     }

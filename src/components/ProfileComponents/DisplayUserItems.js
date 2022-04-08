@@ -35,10 +35,10 @@ const DisplayUserItems = () => {
                 {currentlyActive === 0 && userCountData.topicsCount === 0 &&
                     <>
                         <CreateTopicButton />
-                        <h4 className='p-5'>No discussion yet</h4>
+                        <h4 className='p-5 text-center'>No discussion yet</h4>
                     </>}
                 {currentlyActive === 1 && userCountData.postsCount > 0 && <UserDiscussions type={'posts'}/>}
-                {currentlyActive === 1 && userCountData.postsCount === 0 && <h4 className='p-5'>No posts yet</h4>}
+                {currentlyActive === 1 && userCountData.postsCount === 0 && <h4 className='p-5 text-center'>No posts yet</h4>}
             </div>
         </div>
     );

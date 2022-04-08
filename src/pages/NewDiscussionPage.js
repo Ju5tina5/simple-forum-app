@@ -9,7 +9,7 @@ const NewDiscussionPage = () => {
     const nav = useNavigate();
     useEffect( () => {
         if(!user){
-            nav('/')
+            nav('/simple-forum-app/')
         }
     }, [])
 

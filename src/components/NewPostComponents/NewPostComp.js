@@ -24,7 +24,7 @@ const NewPostComp = ({setDiscussion, setReload, setCurrentPage, setLoading}) => 
         http.post(postData, 'createPost').then( res => {
             setLoading(true)
             if(!res.success && res.message === 'Not logged in'){
-                nav('/login')
+                nav('/simple-forum-app/login')
             }
             if(res.success){
                 setDiscussion(res.updatedDiscussion)

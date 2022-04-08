@@ -14,6 +14,7 @@ const PostListComp = ({token, user, discussion, setDiscussion}) => {
     const topRef = useRef(null);
     const bottomRef = useRef(null)
 
+
     const executeScroll = (ref) => ref.current.scrollIntoView();
 
     useEffect( () => {

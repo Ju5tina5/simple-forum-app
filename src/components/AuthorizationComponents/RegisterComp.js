@@ -40,7 +40,7 @@ const RegisterComp = () => {
         }
         http.post(obj, 'register').then( async (res) => {
             if(res.success){
-                nav(`/login`)
+                nav(`/simple-forum-app/login`)
             }else{
                 setError(res.message)
             }
