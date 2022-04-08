@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.0df577f7.css",
-    "main.js": "/static/js/main.c03cd3ed.js",
-    "static/js/787.43cca8d4.chunk.js": "/static/js/787.43cca8d4.chunk.js",
-    "static/media/3IsJ.gif": "/static/media/3IsJ.02f6383feaa18ef019b4.gif",
-    "static/media/caution-background.png": "/static/media/caution-background.2b291ded80a0c2a21c6d.png",
-    "index.html": "/index.html",
-    "main.0df577f7.css.map": "/static/css/main.0df577f7.css.map",
-    "main.c03cd3ed.js.map": "/static/js/main.c03cd3ed.js.map",
-    "787.43cca8d4.chunk.js.map": "/static/js/787.43cca8d4.chunk.js.map"
+    "main.css": "/simple-forum-app/static/css/main.a4e246d3.css",
+    "main.js": "/simple-forum-app/static/js/main.eb3cc098.js",
+    "static/js/787.43cca8d4.chunk.js": "/simple-forum-app/static/js/787.43cca8d4.chunk.js",
+    "static/media/3IsJ.gif": "/simple-forum-app/static/media/3IsJ.02f6383feaa18ef019b4.gif",
+    "static/media/caution-background.png": "/simple-forum-app/static/media/caution-background.2b291ded80a0c2a21c6d.png",
+    "index.html": "/simple-forum-app/index.html",
+    "main.a4e246d3.css.map": "/simple-forum-app/static/css/main.a4e246d3.css.map",
+    "main.eb3cc098.js.map": "/simple-forum-app/static/js/main.eb3cc098.js.map",
+    "787.43cca8d4.chunk.js.map": "/simple-forum-app/static/js/787.43cca8d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0df577f7.css",
-    "static/js/main.c03cd3ed.js"
+    "static/css/main.a4e246d3.css",
+    "static/js/main.eb3cc098.js"
   ]
 }
