@@ -15,7 +15,6 @@ import UpdateDiscussionPage from "./pages/UpdateDiscussionPage";
 import DiscussionsPage from "./pages/DiscussionsPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import SingleDiscussionPage from "./pages/SingleDiscussionPage";
-import LoadingComponent from "./components/Layout/Loading/LoadingComponent";
 
 function App() {
 

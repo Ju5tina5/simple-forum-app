@@ -8,7 +8,7 @@ const http = {
             credentials: "include"
         }
 
-        const res = await fetch(`http://localhost:4000/${url}`, options)
+        const res = await fetch(`https://industrious-peach-racer.glitch.me/${url}`, options)
         return await res.json()
     },
     post: async (data, url) => {
@@ -21,7 +21,7 @@ const http = {
             body: JSON.stringify(data)
         }
 
-        const res = await fetch(`http://localhost:4000/${url}`, options)
+        const res = await fetch(`https://industrious-peach-racer.glitch.me/${url}`, options)
         return await res.json()
     },
 }
